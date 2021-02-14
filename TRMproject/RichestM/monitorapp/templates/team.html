@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load static %}
+     <hr noshade size="5">
+    <h1 align="center">Наша потрясающая команда</h1>
+     <hr noshade size="5">
+<div class="container">
+  <div class="row">
+    <div class="col" align="center">
+        <div class="card" style="width: 18rem;">
+  <img src="{% static 'img/vadim.jpg' %}" width="100" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Поляков Вадим</h5>
+    <p class="card-text">
+        <ul>
+      <li>Software Developer</li>
+      <li>System Engineer</li>
+      <li>Software Architect</li>
+  </ul>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col" align="center">
+                <div class="card" style="width: 18rem;">
+  <img src="{% static 'img/kirill.jpg' %}" width="100" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Аникин Кирилл</h5>
+    <p class="card-text">
+        <ul>
+      <li>Senior Engineer</li>
+      <li>CAO</li>
+      <li>CPC</li>
+  </ul>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col" align="center">
+                <div class="card" style="width: 18rem;">
+  <img src="{% static 'img/semen.jpg' %}" width="100" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Прамзелев Семён</h5>
+    <p class="card-text">
+        <ul>
+      <li>Chief Information Officer (CIO)</li>
+      <li>Tester</li>
+      <li>Technical Support Engineer</li>
+  </ul>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col" align="center">
+                <div class="card" style="width: 18rem;">
+  <img src="{% static 'img/nikita.jpg' %}" width="100" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Сивачев Никита</h5>
+    <p class="card-text">
+        <ul>
+      <li>Software Developer</li>
+      <li>Team Leader</li>
+      <li>Chief Technology Officer (CTO)</li>
+      <p></p>
+      А так же, создатель этого шуточного сайта и подающий надежды разработчик.
+  </ul>
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<hr noshade size="5">
+    <div align="center">
+    <a href="https://github.com/303Enterprise" target="_blank">
+        <h3>Github link нашей команды</h3>
+        <img src="{% static 'img/git.jpg' %}" width="150">
+    </a>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p align="center">2021 .  303ENTERPRISE</p>
+{% endblock %}

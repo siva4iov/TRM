@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'img/303.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                    THE RICHEST MAN
+                </a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/" ><h5>Home </h5><span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team"><h5>Team</h5></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><h5>Github</h5></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <title>{% block title %} The richest man {% endblock %}</title>
+</head>
+<body>
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>

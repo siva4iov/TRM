@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        .brd {
+            border: 1px solid black; /* Параметры границы */
+            background: antiquewhite; /* Цвет фона */
+            padding: 10px; /* Поля вокруг текста */
+        }
+        img {
+            border: 2px double black;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create two equal columns that sits next to each other */
+        .column {
+            flex: 50%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+    </style>
+    <hr noshade size="5">
+    <h2>Информация</h2>
+    <hr noshade size="5">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="width: 20rem;">
+                <img src="{{ MEDIA_URL }}{{ person.miniature.url }}" width="280px" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">{{ person.name }}</h4>
+                    <hr noshade size="3">
+                    <p class="card-text"><h5>{{ age }} лет ({{ person.dob }})</h5></p>
+                    <p><h5>{{ fortune }} млрд $</h5></p>
+                    <hr>
+                    <p><h7>Компания: </h7><h5>{{ person.company_name }}</h5></p>
+                    <p><h7>Сферы производства:</h7>
+                    <ul>{% for ind in industries %}<h6><li>{{ ind.title }}</li></h6>
+                    {% endfor %}</ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="container">
+                <div class="row row-cols-1">
+                    <div class="col"><hr noshade size="3">
+                        <h2>Описание</h2>
+                        <hr noshade size="3"></div>
+                    <p>{{ person.description }}</p>
+                <hr noshade size="3">
+                <div class="col">
+                    <form method="post">
+                        {% csrf_token %}
+  <div class="form-group">
+<label>Введите размер своей з/п:</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" name="zp" aria-describedby="emailHelp" required min="1000">
+    <small id="emailHelp" class="form-text text-muted">Мы сравним ваш доход</small>
+  </div>
+  <input class="btn btn-success" type="submit" value="Подтвердить">
+</form>
+
+                    {% if zp %}
+                        {% if zp == 9 %}
+                            <h1>ДОБРЫЙ ДЕНЬ, ВЛАДИМИР ВЛАДИМИРОВИЧ.</h1>
+                            {% else %}
+                            <h1>Вам потребуется {{ zp }} лет, чтобы заработать столько же</h1>
+                            {% endif %}
+
+                    {% else %}
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    {% endif %}
+                </div>
+                <hr noshade size="3">
+                    <div class="col">
+
+                                {% for photo in photos %}
+                                    <img src="{{ MEDIA_URL }}{{ photo.img.url }}" width="320">
+                                {% endfor %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

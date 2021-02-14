@@ -1,0 +1,39 @@
+{% extends 'main_base.html' %}
+{% block price %}
+
+    <p></p>
+    <h5>Это как:</h5>
+    {% if person.prices.air %}
+        <p>&#127744;Примерно {{ person.prices.air }} полетов на марс</p>
+    {% endif %}
+    {% if person.prices.doshirak %}
+        <p>&#129377;Примерно {{ person.prices.doshirak }} пачек доширака</p>
+    {% endif %}
+    {% if person.prices.weed %}
+        <p>&#127807;Примерно {{ person.prices.weed }} кг марихуаны</p>
+    {% endif %}
+    {% if person.prices.palace %}
+        <p>&#127984;Примерно {{ person.prices.palace }} дворцов путина</p>
+    {% endif %}
+    {% if person.prices.iphone %}
+        <p>&#128241;Примерно {{ person.prices.iphone }} айфонов последней модели</p>
+    {% endif %}
+    {% if person.prices.tesla %}
+        <p>&#128664;Примерно {{ person.prices.tesla }} автомобилей Tesla CyberTruck</p>
+    {% endif %}
+    {% if person.prices.falcon %}
+        <p>&#128640;Примерно {{ person.prices.falcon }} раз разработать ракету Falcon 9</p>
+    {% endif %}
+    {% if person.prices.lenin %}
+        <p>&#129503;&#8205;&#9794;&#65039;Примерно {{ person.prices.lenin }} лет содержать тело ленина</p>
+    {% endif %}
+    {% if person.prices.janitor %}
+        <p>&#128119;Примерно {{ person.prices.janitor }} зарплат дворника в России</p>
+    {% endif %}
+    {% if person.prices.krepost %}
+        <p>&#128104;&#8205;&#127806;Купить примерно {{ person.prices.krepost }} крепостных крестьян во времена Екатерины II</p>
+    {% endif %}
+    {% if person.prices.cocain %}
+        <p>&#10052;Примерно {{ person.prices.cocain }} дорожек кокаина</p>
+    {% endif %}
+{% endblock %}
